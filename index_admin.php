@@ -1,10 +1,10 @@
 <?php 
 	include('server.php');
 	include('server_workplaces.php');
-/*
+
 	if (empty($_SESSION['username'])) {
 		header('location: login.php');
-	}*/
+	}
 ?>
 
 <!DOCTYPE html>

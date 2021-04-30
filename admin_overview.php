@@ -2,6 +2,12 @@
 include('server_workplaces.php');
 include('server.php');
 
+
+
+if (empty($_SESSION['username'])) {
+        header('location: login.php');
+    }
+
 $username = $_SESSION['username'];
 
 
