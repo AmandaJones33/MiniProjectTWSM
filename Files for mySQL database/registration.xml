@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.0.4
+- https://www.phpmyadmin.net
+-
+- Vært: 127.0.0.1
+- Genereringstid: 30. 04 2021 kl. 11:48:25
+- Serverversion: 10.4.17-MariaDB
+- PHP-version: 8.0.2
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="registration" collation="utf8mb4_general_ci" charset="utf8mb4">
+            <pma:table name="users">
+                CREATE TABLE `users` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `username` varchar(255) NOT NULL,
+                  `email` varchar(255) NOT NULL,
+                  `password` varchar(255) NOT NULL,
+                  `first_name` varchar(255) NOT NULL,
+                  `last_name` varchar(255) NOT NULL,
+                  `phone_number` varchar(255) NOT NULL,
+                  `admin` tinyint(1) NOT NULL,
+                  `csgo` tinyint(1) NOT NULL,
+                  `lol` tinyint(1) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `username` (`username`),
+                  KEY `email` (`email`),
+                  KEY `password` (`password`),
+                  KEY `first_name` (`first_name`),
+                  KEY `last_name` (`last_name`),
+                  KEY `phone_number` (`phone_number`),
+                  KEY `admin` (`admin`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="workhours">
+                CREATE TABLE `workhours` (
+                  `user` varchar(255) NOT NULL,
+                  `school` varchar(255) NOT NULL,
+                  `date` date NOT NULL,
+                  `start` time NOT NULL,
+                  `end` time NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="workplaces">
+                CREATE TABLE `workplaces` (
+                  `school_name` varchar(255) NOT NULL,
+                  `street_name` varchar(255) NOT NULL,
+                  `postal_code` int(11) NOT NULL,
+                  `city` varchar(255) NOT NULL,
+                  `csgo` tinyint(1) NOT NULL,
+                  `lol` tinyint(1) NOT NULL,
+                  `salary` float NOT NULL,
+                  `street_number` int(11) NOT NULL,
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  PRIMARY KEY (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'registration'
+    -->
+    <database name="registration">
+        <!-- Tabel users -->
+        <table name="users">
+            <column name="id">1</column>
+            <column name="username">admin</column>
+            <column name="email">admin@admin.dk</column>
+            <column name="password">21232f297a57a5a743894a0e4a801fc3</column>
+            <column name="first_name">Michelle</column>
+            <column name="last_name">Thykjær</column>
+            <column name="phone_number">20967556</column>
+            <column name="admin">1</column>
+            <column name="csgo">0</column>
+            <column name="lol">0</column>
+        </table>
+        <table name="users">
+            <column name="id">21</column>
+            <column name="username">JohnDoe</column>
+            <column name="email">test@test.dk</column>
+            <column name="password">5f4dcc3b5aa765d61d8327deb882cf99</column>
+            <column name="first_name">John</column>
+            <column name="last_name">Doe</column>
+            <column name="phone_number">12345678</column>
+            <column name="admin">0</column>
+            <column name="csgo">1</column>
+            <column name="lol">1</column>
+        </table>
+        <table name="users">
+            <column name="id">22</column>
+            <column name="username">JaneDoe</column>
+            <column name="email">test@test.dk</column>
+            <column name="password">5f4dcc3b5aa765d61d8327deb882cf99</column>
+            <column name="first_name">Jane</column>
+            <column name="last_name">Doe</column>
+            <column name="phone_number">12345678</column>
+            <column name="admin">0</column>
+            <column name="csgo">0</column>
+            <column name="lol">1</column>
+        </table>
+        <!-- Tabel workhours -->
+        <table name="workhours">
+            <column name="user">JohnDoe</column>
+            <column name="school">Gl Lindholm </column>
+            <column name="date">2021-04-19</column>
+            <column name="start">10:00:00</column>
+            <column name="end">12:30:00</column>
+        </table>
+        <table name="workhours">
+            <column name="user">JohnDoe</column>
+            <column name="school">Gl Lindholm </column>
+            <column name="date">2021-04-20</column>
+            <column name="start">08:00:00</column>
+            <column name="end">12:30:00</column>
+        </table>
+        <table name="workhours">
+            <column name="user">JohnDoe</column>
+            <column name="school">Gl Lindholm </column>
+            <column name="date">2021-04-21</column>
+            <column name="start">12:30:00</column>
+            <column name="end">15:30:00</column>
+        </table>
+        <table name="workhours">
+            <column name="user">JohnDoe</column>
+            <column name="school">Filstedvejen Skole</column>
+            <column name="date">2021-04-22</column>
+            <column name="start">12:30:00</column>
+            <column name="end">15:30:00</column>
+        </table>
+        <table name="workhours">
+            <column name="user">JaneDoe</column>
+            <column name="school">Aalborg Universitet</column>
+            <column name="date">2021-04-12</column>
+            <column name="start">11:00:00</column>
+            <column name="end">15:00:00</column>
+        </table>
+        <table name="workhours">
+            <column name="user">JaneDoe</column>
+            <column name="school">Aalborg Universitet</column>
+            <column name="date">2021-04-14</column>
+            <column name="start">08:30:00</column>
+            <column name="end">16:15:00</column>
+        </table>
+        <table name="workhours">
+            <column name="user">admin</column>
+            <column name="school">Filstedvejen Skole</column>
+            <column name="date">2021-04-12</column>
+            <column name="start">10:30:00</column>
+            <column name="end">12:30:00</column>
+        </table>
+        <table name="workhours">
+            <column name="user">admin</column>
+            <column name="school">Filstedvejen Skole</column>
+            <column name="date">2021-04-15</column>
+            <column name="start">08:30:00</column>
+            <column name="end">12:30:00</column>
+        </table>
+        <table name="workhours">
+            <column name="user">admin</column>
+            <column name="school">Filstedvejen Skole</column>
+            <column name="date">2021-04-20</column>
+            <column name="start">08:30:00</column>
+            <column name="end">16:15:00</column>
+        </table>
+        <!-- Tabel workplaces -->
+        <table name="workplaces">
+            <column name="school_name">Cool School</column>
+            <column name="street_name">Your way</column>
+            <column name="postal_code">9000</column>
+            <column name="city">Aalborg</column>
+            <column name="csgo">0</column>
+            <column name="lol">0</column>
+            <column name="salary">220</column>
+            <column name="street_number">37</column>
+            <column name="id">1</column>
+        </table>
+        <table name="workplaces">
+            <column name="school_name">Gl Lindholm </column>
+            <column name="street_name">Lindholmsvej</column>
+            <column name="postal_code">9400</column>
+            <column name="city">Nørresundby</column>
+            <column name="csgo">1</column>
+            <column name="lol">0</column>
+            <column name="salary">300</column>
+            <column name="street_number">27</column>
+            <column name="id">8</column>
+        </table>
+        <table name="workplaces">
+            <column name="school_name">Filstedvejen Skole</column>
+            <column name="street_name">Filstedvejen</column>
+            <column name="postal_code">9000</column>
+            <column name="city">Aalborg</column>
+            <column name="csgo">0</column>
+            <column name="lol">1</column>
+            <column name="salary">300</column>
+            <column name="street_number">12</column>
+            <column name="id">9</column>
+        </table>
+        <table name="workplaces">
+            <column name="school_name">Aalborg Universitet</column>
+            <column name="street_name">Studystreet</column>
+            <column name="postal_code">9210</column>
+            <column name="city">Aalborg Ø</column>
+            <column name="csgo">1</column>
+            <column name="lol">1</column>
+            <column name="salary">220</column>
+            <column name="street_number">37</column>
+            <column name="id">10</column>
+        </table>
+    </database>
+</pma_xml_export>
